@@ -1,0 +1,29 @@
+# Telemedicine App Backend
+
+## Introduction
+
+Welcome to the backend of the Telemedicine App! 
+This application is built using Django REST Framework to provide a robust and scalable API for facilitating communication between doctors and patients. Our goal is to streamline the telehealth experience by enabling users to schedule appointments, conduct virtual consultations, and manage their healthcare needs efficiently.
+
+The backend is designed to support essential features such as user management, appointment scheduling, secure messaging, and patient record management, all while ensuring data security and compliance with healthcare regulations.
+
+## Features
+
+- **User  Management**: Secure authentication and role-based access for doctors and patients.
+- **Appointment Scheduling**: API endpoints for booking, rescheduling, and canceling appointments.
+- **Patient Records**: Secure storage and management of medical records.
+
+## API Endpoints
+### User Management
+- **POST /users**: Create a new user account.
+- **POST /login**: Authenticate a user and obtain an access token.
+- **GET /users/{id}**: Retrieve a user's details by ID.
+### Appointment Scheduling
+- **POST /appointments**: Book a new appointment.
+- **GET /appointments**: Retrieve a list of upcoming appointments.
+- **PUT /appointments/{id}**: Update an existing appointment.
+- **DELETE /appointments/{id}**: Cancel an appointment.
+### Patient Records
+- **GET /patient-records/{id}**: Retrieve a patient's medical records by ID.
+### Secure Messaging
+- **POST /messages**: Send a secure message to a patient or doctor.
