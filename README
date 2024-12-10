@@ -14,16 +14,4 @@ The backend is designed to support essential features such as user management, a
 - **Patient Records**: Secure storage and management of medical records.
 
 ## API Endpoints
-### User Management
-- **POST /users**: Create a new user account.
-- **POST /login**: Authenticate a user and obtain an access token.
-- **GET /users/{id}**: Retrieve a user's details by ID.
-### Appointment Scheduling
-- **POST /appointments**: Book a new appointment.
-- **GET /appointments**: Retrieve a list of upcoming appointments.
-- **PUT /appointments/{id}**: Update an existing appointment.
-- **DELETE /appointments/{id}**: Cancel an appointment.
-### Patient Records
-- **GET /patient-records/{id}**: Retrieve a patient's medical records by ID.
-### Secure Messaging
-- **POST /messages**: Send a secure message to a patient or doctor.
+Checkout our Documentation 
