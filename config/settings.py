@@ -51,8 +51,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
-    'phonenumber_field' #lol i cant write Regex, stick with this one
-
+    'phonenumber_field',
+    'drf_spectacular',
+    'drf_spectacular_sidecar', 
+    
 ]
 
 MIDDLEWARE = [
@@ -149,6 +151,11 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
     ),
+
+    # spectacular settings
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,  # Limiting results to improve perdomance
 }
 
 DJOSER = {
@@ -176,7 +183,14 @@ AFRICASTALKING_USERNAME = os.getenv('AFRICASTALKING_USERNAME')
 AFRICASTALKING_API_KEY = os.getenv('AFRICASTALKING_API_KEY')
 
 
-REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,  # Limiting results to improve perdomance
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Telemedicine- Doctor Appointment API',
+    'DESCRIPTION': 'API documentation for the Telemedicne Appointment project.',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,  # Whether to include the raw schema in the UI
+    'COMPONENT_SPLIT_REQUEST': True,  # Split request and response components
+    'SERVE_PERMISSIONS': ['rest_framework.permissions.AllowAny'],  # Permissions for the UI
+    'SWAGGER_UI_DIST': 'SIDECAR',  # shorthand to use the sidecar instead
+    'SWAGGER_UI_FAVICON_HREF': 'SIDECAR',
+    'REDOC_DIST': 'SIDECAR',
 }
